@@ -1,0 +1,294 @@
+@media (min-width: 600px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior:smooth ;
+    }
+    $colorUno:#0F6292;
+    $colorDo:#01030f;
+    $colorTres:#16FF00;
+    $colorCuatro:#ffd500;
+    
+    body{
+        background-color: $colorDo;
+        font-family: 'Noto Sans Display', sans-serif;
+    }
+    
+    header{
+        width: 100vw;
+        height: 10vh;
+        background-color: $colorTres;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 20;
+        position: fixed;
+        p{
+            color: $colorDo;
+            font-size: 35px;
+        }
+        a{
+            
+            width: 20px;
+            height: 20px;
+            rotate: 45deg;
+            transition: 1.5s;
+            background-color: $colorDo;
+        }
+        .active{
+            rotate: 135deg;
+            transform: scale(1.3);
+            border: $colorDo 2px solid;
+            background-color: transparent;
+        }
+    }
+    
+    #inicio{
+        width: 100vw;
+        height: 100vh;
+        .inicio_oscuro{
+            width: 100%;
+            height: 70vh;
+            background-image: url("./img/fondo\ 1.avif");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20vh;
+            
+            h1{
+                color: $colorCuatro;
+                font-size: 45px;
+                letter-spacing: 3px;
+                margin-bottom: 3vh;
+                text-align: center;
+            }
+            p{
+                color: $colorTres;
+                font-size: 25px;
+                background-color: rgba(4, 4, 4, 0.4);
+            }
+            
+        }
+        .inicio_claro{
+            width: 100%;
+            height: 30vh;
+            background-color: $colorDo;
+            
+            .claro_contorno{
+                width: 70%;
+                height: 35vh;
+                margin-top: -10vh;
+                margin-left: 19vw;
+                border: $colorCuatro 4px solid;
+                position: absolute;
+            }
+            img{
+                width: 70%;
+                height: 40vh;
+                margin-top: -20vh;
+                z-index: 2;
+                position: relative;
+                margin-left: 15vw;
+                border: $colorDo 3px solid;
+            }
+            p{
+                font-size: 20px;
+                text-align: center;
+                margin-top: 9vh;
+                color: $colorTres;
+            }
+        }
+    }
+    
+    #sobre-mi{
+        width: 100vw;
+        padding-top: 12vh;
+        .sobre-mi-tit-uno{
+            font-size: 30px;
+            color: $colorCuatro;
+            text-align: center;
+        }
+        
+    
+        .sobre-mi-texto{
+            color: white;
+            padding: 3vh 7vw;
+            text-align: justify;
+            line-height: 2;
+            p{
+               border-bottom: 3px $colorCuatro dotted;
+                border-left: 3px $colorCuatro dotted;
+                padding: 5px;
+            }
+            span{
+                color: $colorTres;
+            }
+    
+            
+        }
+        .sobre-mi-herramientas{
+            padding: 0 10vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            height: 80vh;
+            margin-bottom: -12vh;
+    
+            img{
+                width: 70vw;
+                margin: 0 5vw 3vh; 
+                border-bottom: $colorTres 3px solid;
+            }
+            p{
+                color: red;
+                font-size: 25px;
+                width: 80vw;
+                font-weight: bold;
+                text-align: center;
+                
+    
+            }
+            ul{
+                color: $colorTres;
+                list-style-type: circle ;
+                line-height: 2;
+                margin: auto;
+                span{
+                    color: white;
+                }
+            }
+        }
+    
+    }
+    
+    @keyframes imagen{
+        0%{
+            transform: scale(1);
+    
+        }
+        50%{
+            transform: scale(1.05);
+            
+        }
+        0%{
+            transform: scale(1);
+        }
+    }
+    
+    #proyectos{
+        width: 100vw;
+        padding-top: 12vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        p{
+            color: $colorCuatro;
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 5vh;
+            width: 100%;
+        }
+        .proyecto{
+            width: 45%;
+            height: 35vh;
+            position: relative;
+            margin-bottom: 5vh;
+            background-size: cover;
+            background-position: center;
+            
+            
+            &::before{
+                content: "";
+                background-color: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                
+            }
+            img{
+                width: 70%;
+                height: 90%;
+                margin: 5% 15%;
+                position: absolute;
+                z-index: 2;
+                object-fit: cover;
+                animation-name: imagen;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+            }
+        }
+        .uno{
+            background-image: url("./img/proyecto\ 6.jpeg");
+            background-position: bottom;
+            img{
+                object-position: bottom;
+            }
+        }
+        
+        .dos{
+            background-image: url("./img/proyecto\ 2.png");
+        }
+        .tres{
+            background-image: url("./img/spa.jpg");
+            
+        }
+        .cuatro{
+            background-image: url("./img/calculadora.png");
+        }
+        .cinco{
+            background-image: url("./img/proyecto\ 5.png");
+        }
+        .seis{background-image: url("./img/proyecto\ 6.1.jpg");
+        }
+        .siete{
+            background-image: url("./img/proyecto7.png");
+        }
+    
+        
+    }
+    
+    #contacto{
+        color: wheat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .c-uno{
+            font-size: 50px;
+            color: $colorCuatro;
+            margin-bottom: 2vh;
+        }
+        .c-dos{
+            font-size: 25px;
+            color: $colorCuatro;
+            text-align: center;
+            margin-bottom: 2vh;
+            letter-spacing: 3px;
+        }
+        .redes{
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            font-size: 45px;
+            margin-bottom: 5vh;
+            a{
+                color: $colorTres;
+    
+            }
+        }
+         .c-tres{
+            color: whitesmoke;
+            i{
+                color: red;
+            }
+         }
+    
+    }
+}
